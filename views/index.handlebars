@@ -24,5 +24,26 @@
             {{/each}}
             </div>
         </div>
+
+        <div class="col-xs-6 text-center" class="task">
+            {{#each suggestion_data}}
+                {{#if completed_task}}
+                <input class="form-control" type="text" placeholder="{{this.id}}. {{this.suggestion_name}}" readonly>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center enter_section">
+            <form action="/suggestions/create" method="POST">
+            <input type="text" name="suggestion_name" class="form-control"
+            value="" id="enter_text">
+            <button type="submit" class="btn btn-primary" id="text-enter-button">Submit!</button>
+            </form>
+            <p>Enter your suggestion for a new video!</p>
+        </div>
     </div>
 </div>

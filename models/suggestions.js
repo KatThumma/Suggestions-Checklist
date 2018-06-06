@@ -9,6 +9,10 @@ var suggestion = {
 
     update: function(id,cb){
         orm.update('suggestions',id,cb);
+    },
+
+    create: function(name,cb){
+        orm.create('suggestions', name, cb);
     }
 }
 

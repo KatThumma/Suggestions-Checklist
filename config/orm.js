@@ -10,8 +10,14 @@ var orm = {
     },
 
     update: function(tableInput, condition,cb){
-        connection.query('UPDATE '+tableInput+' SET completed_task=true WHERE id='
-        +condition+';', function(err,result){
+        connection.query('UPDATE '+tableInput+' SET completed_task=true WHERE id='+condition+';', function(err,result){
+            if(err)throw err;
+            cb(result);
+        })
+    },
+
+    create: function(tableInput,val,cb){
+        connection.query('INSERT INTO '+tableInput+" (suggestion_name) VALUES ('"+val+"');", function(err,result){
             if(err)throw err;
             cb(result);
         })
