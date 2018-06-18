@@ -19,5 +19,5 @@ app.set('view engine','handlebars');
 var routes = require('./controllers/suggestions_controller.js');
 app.use('/',routes);
 
-var port = 3000;
+var port = process.env.port || 3000;
 app.listen(port);
