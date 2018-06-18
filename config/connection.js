@@ -9,12 +9,12 @@ if (process.env.JAWSDB_URL) {
     user:'root',
     password:'Sockeybabe13!',
     database:'suggestions_db'
-    })
-}
+    });
+};
 
 connection.connect(function(err){
     if(err)throw err;
     console.log("connected as id; "+connection.threadid);
-})
+});
 
 module.exports = connection;
